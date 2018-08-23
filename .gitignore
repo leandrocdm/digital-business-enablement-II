@@ -1,9 +1,9 @@
-
 # Created by https://www.gitignore.io/api/java,maven,macos,linux,eclipse,windows,intellij
 
 ### Eclipse ###
 
 .metadata
+Servers/
 bin/
 tmp/
 *.tmp
