@@ -5,8 +5,8 @@
 
 <tags:template titulo="Cadastro">
 
-	<c:if test="${not empty msg }">
-		<div class="alert alert-warning">${msg}</div>
+	<c:if test="${not empty msgCadastro }">
+		<div class="alert alert-success">${msgCadastro}</div>
 	</c:if>
 
 	<form action="cadastrar" method="post">
@@ -26,7 +26,7 @@
 				<label for="id-perecivel">Perecivel</label>
 			</div>
 
-			<input type="submit" value="Cadastrar" class="btn btn-info">
+			<input type="submit" value="Cadastrar" class="btn btn-primary">
 		</div>
 	</form>
 
