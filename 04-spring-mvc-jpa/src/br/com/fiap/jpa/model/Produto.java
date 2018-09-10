@@ -1,4 +1,4 @@
-package br.com.fiap.spring.model;
+package br.com.fiap.jpa.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,25 +8,25 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="T_SPRING_PRODUTO")
-@SequenceGenerator(name="produto", allocationSize=1,sequenceName="SQ_SPRING_PRODUTO")
+@Table(name="T_PRODUTO")
+@SequenceGenerator(name="produto",sequenceName="SQ_T_PRODUTO",allocationSize=1)
 public class Produto {
-	
+
 	@Id
-	@GeneratedValue(generator="produto", strategy=GenerationType.SEQUENCE)
+	@Column(name="cd_produto")
+	@GeneratedValue(generator="produto",strategy=GenerationType.SEQUENCE)	
 	private int codigo;
 	
-	@Column
+	@Column(name="nm_produto")
 	private String nome;
 	
-	@Column
+	@Column(name="vl_produto")
 	private double preco;
 	
-	@Column
+	@Column(name="st_perecivel")
 	private boolean perecivel;
-	
+
 	public int getCodigo() {
 		return codigo;
 	}
@@ -59,5 +59,4 @@ public class Produto {
 		this.perecivel = perecivel;
 	}
 	
-
 }

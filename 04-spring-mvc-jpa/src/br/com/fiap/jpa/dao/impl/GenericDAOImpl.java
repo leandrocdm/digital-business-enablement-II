@@ -1,4 +1,4 @@
-package br.com.fiap.spring.dao.impl;
+package br.com.fiap.jpa.dao.impl;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
@@ -6,15 +6,14 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import br.com.fiap.spring.dao.GenericDAO;
-import br.com.fiap.spring.exception.CommitException;
-import br.com.fiap.spring.exception.KeyNotFoundException;
-
+import br.com.fiap.jpa.dao.GenericDAO;
+import br.com.fiap.jpa.exception.KeyNotFoundException;
 
 public class GenericDAOImpl<T,K> implements GenericDAO<T, K> {
 
+	//O framework irá gerenciar os EntityManager (criar e destruir)
 	@PersistenceContext
-	private EntityManager em;
+	protected EntityManager em;
 	
 	private Class<T> clazz;
 	

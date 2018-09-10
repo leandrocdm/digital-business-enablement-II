@@ -1,10 +1,8 @@
-package br.com.fiap.spring.dao;
+package br.com.fiap.jpa.dao;
 
 import java.util.List;
 
-import br.com.fiap.spring.exception.CommitException;
-import br.com.fiap.spring.exception.KeyNotFoundException;
-
+import br.com.fiap.jpa.exception.KeyNotFoundException;
 
 public interface GenericDAO<T,K> {
 
@@ -17,7 +15,7 @@ public interface GenericDAO<T,K> {
 	void remover(K codigo) throws KeyNotFoundException;
 	
 	T pesquisar(K codigo);
-		
+	
 }
 
 
