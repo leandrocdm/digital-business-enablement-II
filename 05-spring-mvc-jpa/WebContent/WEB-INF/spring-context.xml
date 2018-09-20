@@ -14,7 +14,7 @@
 	http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
 
 	<context:component-scan
-		base-package="br.com.fiap.spring.controller,br.com.fiap.jpa.dao" />
+		base-package="br.com.fiap.spring.controller, br.com.fiap.spring.dao" />
 
 	<mvc:annotation-driven />
 
@@ -24,7 +24,6 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	<!-- Libera o acesso aos arquivos estáticos, sem passar pela controller -->
 	<mvc:default-servlet-handler />
 
 	<bean id="entityManagerFactory"
@@ -53,7 +52,6 @@
 		<property name="entityManagerFactory"
 			ref="entityManagerFactory" />
 	</bean>
-	
 	<tx:annotation-driven
 		transaction-manager="transactionManager" />
 

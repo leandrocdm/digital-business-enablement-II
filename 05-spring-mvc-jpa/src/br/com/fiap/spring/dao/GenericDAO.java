@@ -1,9 +1,8 @@
-package br.com.fiap.jpa.dao;
+package br.com.fiap.spring.dao;
 
 import java.util.List;
 
-import br.com.fiap.jpa.exception.CommitException;
-import br.com.fiap.jpa.exception.KeyNotFoundException;
+import br.com.fiap.spring.exception.KeyNotFoundException;
 
 public interface GenericDAO<T,K> {
 

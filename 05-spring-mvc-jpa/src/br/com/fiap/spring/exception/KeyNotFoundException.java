@@ -1,4 +1,4 @@
-package br.com.fiap.jpa.exception;
+package br.com.fiap.spring.exception;
 
 public class KeyNotFoundException extends Exception {
 

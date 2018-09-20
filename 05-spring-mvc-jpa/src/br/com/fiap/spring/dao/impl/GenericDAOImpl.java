@@ -1,4 +1,4 @@
-package br.com.fiap.jpa.dao.impl;
+package br.com.fiap.spring.dao.impl;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import br.com.fiap.jpa.dao.GenericDAO;
-import br.com.fiap.jpa.exception.KeyNotFoundException;
+import br.com.fiap.spring.dao.GenericDAO;
+import br.com.fiap.spring.exception.KeyNotFoundException;
 
 public class GenericDAOImpl<T,K> 
 						implements GenericDAO<T, K>{
