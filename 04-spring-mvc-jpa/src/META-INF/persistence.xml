@@ -7,8 +7,7 @@
 			<property name="hibernate.format_sql" value="true" />
 									<!-- update, validate -->
 			<property name="hibernate.hbm2ddl.auto" value="update"/>
-			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
-			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>			
 		</properties>	
 	</persistence-unit>
 </persistence>

@@ -2,6 +2,8 @@ package br.com.fiap.jpa.exception;
 
 public class KeyNotFoundException extends Exception {
 
+	private static final long serialVersionUID = 8595671325622070195L;
+
 	public KeyNotFoundException() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -27,4 +29,6 @@ public class KeyNotFoundException extends Exception {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+	
 }

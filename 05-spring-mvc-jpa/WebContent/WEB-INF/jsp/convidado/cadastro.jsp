@@ -3,28 +3,28 @@
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<tags:template titulo="Cadastro de Bebida">
-	
-	<h1>Cadastro de Bebida</h1>
+<tags:template titulo="Cadastro de Convidado">
+	<h1>Cadastro de Convidado</h1>
 	
 	<c:if test="${not empty msg }">
 		<div class="alert alert-success">
-			${msg}
+			${msg }
 		</div>
 	</c:if>
 	
-	<form action="cadastrar" method="post">
+	<c:url value="/convidado/cadastrar" var="a"/>
+	<form method="post" action="${a}">
 		<div class="form-group">
 			<label for="id-nome">Nome</label>
 			<input type="text" name="nome" class="form-control" id="id-nome">
+		</div>	
+		<div class="form-group">
+			<label for="id-email">E-mail</label>
+			<input type="text" name="email" class="form-control" id="id-email">
 		</div>
 		<div class="form-group">
-			<label for="id-validade">Validade</label>
-			<input type="text" name="validade" class="form-control" id="id-validade">
-		</div>
-		<div class="form-group">
-			<input type="checkbox" name="alcoolico" value="true" id="id-alcoolico">
-			<label for="id-alcoolico">Alcoolico</label>
+			<label for="id-data">Data</label>
+			<input type="text" name="dataAniversario" class="form-control" id="id-data">
 		</div>
 		<input type="submit" value="Cadastrar" class="btn btn-primary">
 	</form>

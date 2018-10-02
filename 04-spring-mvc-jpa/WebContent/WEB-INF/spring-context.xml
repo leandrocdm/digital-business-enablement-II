@@ -24,7 +24,6 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	<!-- Libera o acesso aos arquivos estáticos, sem passar pela controller -->
 	<mvc:default-servlet-handler />
 
 	<bean id="entityManagerFactory"
@@ -32,32 +31,30 @@
 		<property name="persistenceUnitName" value="CLIENTE_ORACLE" />
 		<property name="dataSource" ref="oracleDataSource" />
 		<property name="jpaVendorAdapter">
-			<bean
-				class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
 		</property>
 	</bean>
-
+	
 	<bean id="oracleDataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName"
-			value="oracle.jdbc.OracleDriver" />
-		<property name="url"
-			value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl" />
+		<property name="driverClassName" value="oracle.jdbc.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl" />
 		<property name="username" value="PF0392" />
 		<property name="password" value="EDF452" />
 	</bean>
-
+	
 	<!-- Transações -->
-	<bean id="transactionManager"
-		class="org.springframework.orm.jpa.JpaTransactionManager">
-		<property name="entityManagerFactory"
-			ref="entityManagerFactory" />
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
 	
-	<tx:annotation-driven
-		transaction-manager="transactionManager" />
+	<tx:annotation-driven transaction-manager="transactionManager" />
 
 </beans>
+
+
+
+
 
 
 

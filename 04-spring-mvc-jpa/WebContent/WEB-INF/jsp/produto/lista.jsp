@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<tags:template titulo="Lista de Bebidas">
-
-	<h1>Lista de Bebidas!</h1>
-
+<tags:template titulo="Lista de Produtos">
+	<h1>Lista de Produtos</h1>
+	
+	<!-- Mensagem de sucesso -->
 	<c:if test="${not empty msg }">
 		<div class="alert alert-success">
 			${msg }
@@ -16,33 +16,28 @@
 	
 	<table class="table">
 		<tr>
-			<th>Código</th>
+			<th>Id</th>
 			<th>Nome</th>
-			<th>Data</th>
-			<th>Alcoolico</th>
+			<th>Preço</th>
+			<th>Perecível</th>
 			<th></th>
 		</tr>
-		<c:forEach var="bebida" items="${bebidas }">
+		<c:forEach items="${produtos }" var="p">
 			<tr>
-				<td>${bebida.codigo }</td>
-				<td>${bebida.nome }</td>
+				<td>${p.codigo }</td>
+				<td>${p.nome }</td>
+				<td>${p.preco }</td>
+				<td>${p.perecivel?"Sim":"Não" }</td>
 				<td>
-					<fmt:formatDate value="${bebida.validade.time }"
-						pattern="dd/MM/yyyy"/>
-				</td>
-				<td>${bebida.alcoolico?"Sim":"Não" }</td>
-				<td>
-					<a class="btn btn-outline-primary btn-sm" href="<c:url value="/bebida/editar/${bebida.codigo }"/>">Editar</a>
+					<a class="btn btn-primary" href="<c:url value="/produto/editar/${p.codigo}"/>">Editar</a>
 					<!-- Button trigger modal -->
-					<button onclick="codigoBebida.value = ${bebida.codigo}" type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
-					  Excluir
+					<button onclick="codigoProduto.value = ${p.codigo}" type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+  						Excluir
 					</button>
 				</td>
 			</tr>
 		</c:forEach>
 	</table>
-
-
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -55,18 +50,17 @@
         </button>
       </div>
       <div class="modal-body">
-        Tem certeza do que está fazendo?
+        Deseja realmente excluir o produto?
       </div>
       <div class="modal-footer">
-      	<c:url value="/bebida/remover" var="a"/>
-      	<form action="${a}" method="post">
-      		<input type="hidden" name="codigo" id="codigoBebida" >
+      	<form action="<c:url value="/produto/excluir"/>" method="post">
+      		<input type="hidden" id="codigoProduto" name="id">
 	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-	        <button type="submit" class="btn btn-primary">Excluir</button>
-        </form>
+	        <button type="submit" class="btn btn-danger">Excluir</button>
+      	</form>
       </div>
     </div>
   </div>
 </div>
-
+	
 </tags:template>
