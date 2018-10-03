@@ -2,9 +2,9 @@
 
 
 1- Criar um Dynamic Web Project - version 3.1
-2- Generar o web.xml
+2- Gerar o web.xml
 3- Converter para Maven Project
-4- Adicionar as dependencias no Maven: 
+4- Adicionar as dependencias do spring no Maven: 
 <dependencies>
    <dependency>
       <groupId>org.springframework</groupId>
