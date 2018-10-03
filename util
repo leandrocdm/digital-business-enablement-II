@@ -78,19 +78,6 @@
 
 7- Pode configurar a controller, os jsps e os entitys que funcionará 
 
-Controller: 
-	@GetMapping("produto/cadastrar")
-	public String abrirCadastro() {
-		return "produto/cadastro";
-	}
-	
-	@PostMapping(value="produto/cadastrar")
-	public ModelAndView processarForm(Produto produto){
-		ModelAndView retorno = new ModelAndView("produto/sucesso");
-		retorno.addObject("produto", produto);
-		return retorno;
-	}
-
 8- Configurar  o spring-context para nao ler o bootstrap
 <mvc:default-servlet-handler/>
 
@@ -214,13 +201,6 @@ public class GenericDAOImpl<T, K> implements GenericDao<T, K> {
 
 18- Remover os motedos begin, commit ou rollback
 
-19- Adicionar o dao e a anotacao Autoride na controller
-	@Autowired
-	private ProdutoDAO dao;
-	
-20- Adicionar a anotacao de transactional nos metodos de acesso ao banco
-@Transactional
-
 21- Adicionar o bean de transacao no spring-context:
 <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"> 
 <property name="entityManagerFactory" ref="entityManagerFactory" />
@@ -231,8 +211,26 @@ public class GenericDAOImpl<T, K> implements GenericDao<T, K> {
 <context:component-scan
 		base-package='br.com.localhost.teste.controller, br.com.localhost.teste.dao'/>
 		
-23- Colocar a anotacao @Repository nas classes DAOImpl
+23- Configurar no web.xml um filtro para que ele utilize o charsert UTF-8:
 
+ <filter>
+     <filter-name>encoding-filter</filter-name>
+     <filter-class>
+         org.springframework.web.filter.CharacterEncodingFilter
+     </filter-class>
+     <init-param>
+         <param-name>encoding</param-name>
+         <param-value>UTF-8</param-value>
+     </init-param>
+     <init-param>
+     <param-name>forceEncoding</param-name>
+     <param-value>true</param-value>
+     </init-param>
+</filter>
+ <filter-mapping>
+     <filter-name>encoding-filter</filter-name>
+     <url-pattern>/*</url-pattern>
+ </filter-mapping>
 
 
  
