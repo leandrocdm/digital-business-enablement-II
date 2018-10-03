@@ -214,6 +214,24 @@ public class GenericDAOImpl<T, K> implements GenericDao<T, K> {
 
 18- Remover os motedos begin, commit ou rollback
 
+19- Adicionar o dao e a anotacao Autoride na controller
+	@Autowired
+	private ProdutoDAO dao;
+	
+20- Adicionar a anotacao de transactional nos metodos de acesso ao banco
+@Transactional
+
+21- Adicionar o bean de transacao no spring-context:
+<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"> 
+<property name="entityManagerFactory" ref="entityManagerFactory" />
+</bean>
+<tx:annotation-driven transaction-manager="transactionManager" />
+
+22- Adicionar o pacote dao no spring-context 	
+<context:component-scan
+		base-package='br.com.localhost.teste.controller, br.com.localhost.teste.dao'/>
+		
+23- Colocar a anotacao @Repository nas classes DAOImpl
 
 
 
