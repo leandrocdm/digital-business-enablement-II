@@ -24,9 +24,9 @@
 					<warSourceDirectory>WebContent</warSourceDirectory>
 				</configuration>
 			</plugin>
-			
 		</plugins>
 	</build>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -58,6 +58,8 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
+
+		<!-- JPA/Hibernate -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
@@ -83,5 +85,7 @@
 			<artifactId>spring-orm</artifactId>
 			<version>4.1.0.RELEASE</version>
 		</dependency>
+
 	</dependencies>
+
 </project>
