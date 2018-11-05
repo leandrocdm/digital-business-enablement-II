@@ -2,10 +2,8 @@ package br.com.fiap.spring.model;
 
 public class Pessoa {
 
-	private String nome;
-	
-	private int idade;
-	
+	private String nome;	
+	private int idade;	
 	private boolean aposentado;
 
 	public String getNome() {
@@ -31,5 +29,4 @@ public class Pessoa {
 	public void setAposentado(boolean aposentado) {
 		this.aposentado = aposentado;
 	}
-	
 }

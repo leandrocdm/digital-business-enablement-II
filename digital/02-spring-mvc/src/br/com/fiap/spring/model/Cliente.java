@@ -31,5 +31,4 @@ public class Cliente {
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
-
 }

@@ -8,7 +8,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.fiap.spring.model.Cliente;
 
-
 @Controller
 @RequestMapping("cliente")
 public class ClienteController {

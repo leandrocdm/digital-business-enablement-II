@@ -39,6 +39,4 @@ public class Carro {
 	public void setNovo(boolean novo) {
 		this.novo = novo;
 	}
-	
-
 }

@@ -11,20 +11,16 @@ import br.com.fiap.spring.model.Pessoa;
 @RequestMapping("pessoa")
 public class PessoaController {
 
-	//Método para abrir a tela com o formulário de cadastro
-	//URL: pessoa/cadastrar
 	@GetMapping("cadastrar")
 	public String abrirFormulario() {
-		return "pessoa/form"; //Pasta e arquivo jsp
-	}
-	
-	//Método que recebe as informações do formulário de cadastro
-	@PostMapping("cadastrar")
-	public String processarFormulario(Pessoa p) {
-		System.out.println(p.getNome() + " " + p.getIdade()+ " " + p.isAposentado());
 		return "pessoa/form";
 	}
-	
+
+	@PostMapping("cadastrar")
+	public String processarFormulario(Pessoa p) {
+		System.out.println("Nome: "+p.getNome() + " Idade: " + p.getIdade()+ " É aposentado? " + p.isAposentado());
+		return "pessoa/form";
+	}
 }
 
 

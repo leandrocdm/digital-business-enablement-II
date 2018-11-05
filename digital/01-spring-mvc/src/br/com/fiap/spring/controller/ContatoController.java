@@ -14,11 +14,9 @@ public class ContatoController {
 		return "contato/form";
 	}
 	
-	//Método que recupera as informações do formulário
 	@PostMapping("enviar")
 	public String contato(String mensagem, String nome) {
 		System.out.println(nome + " " + mensagem);
 		return "contato/form";
 	}
-	
 }
