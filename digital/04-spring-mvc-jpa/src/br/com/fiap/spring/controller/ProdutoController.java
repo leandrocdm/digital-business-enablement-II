@@ -30,7 +30,6 @@ public class ProdutoController {
 	@Transactional
 	@PostMapping("excluir")
 	public String apagar(int id, RedirectAttributes r) {
-		//Apagar do banco de dados
 		try {
 			dao.remover(id);
 			r.addFlashAttribute("msg", "Produto excluido");
@@ -43,17 +42,13 @@ public class ProdutoController {
 	@Transactional
 	@PostMapping("editar")
 	public String processaEdicao(Produto produto, RedirectAttributes r) {
-		//Atualiza no banco de dados
 		dao.atualizar(produto);
-		//Mensagem de sucesso
-		r.addFlashAttribute("msg", "Produto atualizado");
-		//Redireciona para a listagem
+		r.addFlashAttribute("msg", "Produto " +produto.getNome()+ " atualizado");
 		return "redirect:/produto/listar";
 	}
 	
 	@GetMapping("editar/{id}")
 	public ModelAndView abrirEdicao(@PathVariable("id") int id) {
-		//Retorna a página com os valores do produto para o formulário HTML
 		return new ModelAndView("produto/edicao")
 				.addObject("produto", dao.pesquisar(id));
 	}
@@ -61,7 +56,6 @@ public class ProdutoController {
 	@GetMapping("listar")
 	public ModelAndView listar() {
 		return new ModelAndView("produto/lista")
-				//Envia a lista de produtos para a tela
 				.addObject("produtos", dao.listar());
 	}
 	
@@ -74,10 +68,7 @@ public class ProdutoController {
 	@PostMapping("cadastrar")
 	public ModelAndView processarForm(Produto produto, RedirectAttributes r) {
 		dao.inserir(produto);
-		//Adiciona a mensagem no objeto que mantém a informação após redirect
-		r.addFlashAttribute("msg", "Produto cadastrado!");
-		//Redirect para uma URL e não uma página
+		r.addFlashAttribute("msg", "Produto " +produto.getNome()+ " cadastrado!");
 		return new ModelAndView("redirect:/produto/cadastrar");
 	}
-	
 }

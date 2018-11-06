@@ -12,7 +12,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="<c:url value="/"/>">Home</a>
+  <a class="navbar-brand" href="<c:url value="#"/>">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -28,9 +28,6 @@
           <a class="dropdown-item" href="<c:url value="/produto/listar"/>">Listar</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
     </ul>
     <form action="<c:url value="/produto/buscar"/>" method="get" class="form-inline my-2 my-lg-0">
       <input name="nomeProduto" class="form-control mr-sm-2" type="search" placeholder="Busca de produto" aria-label="Search">
@@ -41,6 +38,7 @@
 	<div class="container">
 		
 		<jsp:doBody/>
+		<br>
 		
 		<p>Todos os direitos reservados &copy; - 2018</p>
 	</div>

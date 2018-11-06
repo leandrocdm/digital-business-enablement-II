@@ -7,9 +7,8 @@
 <tags:template titulo="Lista de Produtos">
 	<h1>Lista de Produtos</h1>
 	
-	<!-- Mensagem de sucesso -->
 	<c:if test="${not empty msg }">
-		<div class="alert alert-success">
+		<div class="alert alert-danger">
 			${msg }
 		</div>
 	</c:if>
@@ -44,7 +43,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Confirmação</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Confirmação de Exclusão</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
