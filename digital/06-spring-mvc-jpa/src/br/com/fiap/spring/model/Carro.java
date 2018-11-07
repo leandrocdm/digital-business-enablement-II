@@ -15,8 +15,8 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name="T_CARRO")
-@SequenceGenerator(name="carro",sequenceName="SQ_T_CARRO",allocationSize=1)
+@Table(name="T_06_SPRING_CARRO")
+@SequenceGenerator(name="carro",sequenceName="SQ_06_SPRING_CARRO",allocationSize=1)
 public class Carro {
 
 	@Id

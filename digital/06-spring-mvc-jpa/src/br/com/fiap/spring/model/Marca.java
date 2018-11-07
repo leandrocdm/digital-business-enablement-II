@@ -8,19 +8,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
-import javax.validation.constraints.Size;
+import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-@SequenceGenerator(name="marca", sequenceName="SQ_T_MARCA",allocationSize=1)
+@Table(name="T_06_SPRING_MARCA")
+@SequenceGenerator(name="marca", sequenceName="SQ_06_SPRING__MARCA",allocationSize=1)
 public class Marca {
 
 	@Id
 	@GeneratedValue(generator="marca",strategy=GenerationType.SEQUENCE)
 	private int codigo;
 	
-	@NotBlank(message="O nome é obrigatório")
+	@NotBlank(message="O nome ï¿½ obrigatï¿½rio")
 	private String nome;
 	
 	@OneToMany(mappedBy="marca")

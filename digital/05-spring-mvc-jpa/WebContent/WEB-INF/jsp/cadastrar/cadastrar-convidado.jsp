@@ -7,7 +7,7 @@
 <tags:template titulo="Cadastrar Produto">
 
 	<c:if test="${msgSucesso != null}">
-		<div class="alert alert-danger">${msgSucesso}</div>
+		<div class="alert alert-sucess">${msgSucesso}</div>
 	</c:if>
 	
 	<c:if test="${msgErro != null}">

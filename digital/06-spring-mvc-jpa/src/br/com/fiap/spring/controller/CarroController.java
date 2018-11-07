@@ -54,4 +54,14 @@ public class CarroController {
 		}
 	}
 	
+	@GetMapping("pesquisar")
+	public ModelAndView pesquisar(String carro) {		
+		ModelAndView model = new ModelAndView("carro/lista");
+		try {
+			model.addObject("carro", dao.pesquisarPor(carro));
+		} catch (Exception e) {
+			model.addObject("msgErro", "Erro ao tentar listar os carros!");
+		}
+		return model;
+	}
 }
